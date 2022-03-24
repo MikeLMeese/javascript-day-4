@@ -19,7 +19,8 @@ const MemberLastNames = users.map(users =>users.lastName);
 console.log(MemberLastNames);
 //Get an array of the full names who have logged in more than 10 times
 const NoLifeMembers = users.filter(users => users.logins > 10);
-console.log(NoLifeMembers);
+const NoLifeNames = NoLifeMembers.map(user => `${user.firstName} ${user.lastName}`);
+console.log(NoLifeNames);
 //Get the total number of logins for the list of users
 const TotalLogins = users.reduce(function (total, users) {
     return total + users.logins;
